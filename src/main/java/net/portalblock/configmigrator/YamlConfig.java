@@ -51,7 +51,7 @@ public class YamlConfig {
         Removed all annotations
         Removed all comments
         Removed save method/calls
-        Removed getListeners method
+        Altered getListeners method
      */
 
     private final Yaml yaml;
@@ -192,6 +192,52 @@ public class YamlConfig {
             def = Integer.parseInt(val[1]);
         }
         return new InetSocketAddress(val[0], def);
+    }
+
+    //Changed ListenerInfo to OtherInfo
+    public Collection<OtherInfo> getListeners()
+    {
+        Collection<Map<String, Object>> base = get( "listeners", (Collection) Arrays.asList( new Map[]
+                {
+                        new HashMap()
+                } ) );
+
+        //Removed forced host related
+
+        Collection<OtherInfo> ret = new HashSet<>();
+
+        for ( Map<String, Object> val : base )
+        {
+            String motd = get( "motd", "&1Another Bungee server", val );
+            //Removed ChatColor formatting
+
+            int maxPlayers = get( "max_players", 1, val );
+
+            //Removed default and fallback/force default options
+
+            String host = get("host", "0.0.0.0:25577", val);
+
+            //Removed tab list size
+
+            //Changed method call and renamed from 'address' to 'bind'
+            InetSocketAddress bind = getAddressFromString(host);
+
+            //Removed forced hosts
+
+            //Removed tab list related things
+
+            //Removed bind local address boolean
+
+            //Removed ping passthrough boolean
+
+            //Removed query related things
+
+            //Changed object creation
+            OtherInfo info = new OtherInfo(motd, maxPlayers, bind);
+            ret.add( info );
+        }
+
+        return ret;
     }
 
     public Collection<String> getGroups(String player)
