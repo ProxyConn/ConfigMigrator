@@ -42,12 +42,6 @@ public class ConfigMigrator {
 
         conf.load();
 
-        for(Map.Entry<String, ServerDefinition> entry : conf.getServers().entrySet()){
-            System.out.println(entry.getValue().getName());
-            System.out.println(entry.getValue().getMotd());
-            System.out.println(entry.getValue().getAddress().getHostString() + ":" + entry.getValue().getAddress().getPort());
-        }
-
         JSONObject cfg = new JSONObject();
 
         OtherInfo defaultListener = conf.getListeners().toArray(new OtherInfo[conf.getListeners().size()])[0];
