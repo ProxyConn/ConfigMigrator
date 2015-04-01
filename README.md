@@ -1,6 +1,11 @@
 ConfigMigrator
 ===============
-This is a simple utility to migrate Bungeecord config files to ProxyConn config files.
+This is a simple utility to migrate Bungeecord config files to ProxyConn config files.<br>
+<h2>Options</h2>
+<ul>
+    <li>-input <path/to/bungee/config> -output <path/to/output> - Converts a Bungee config.yml to a Controller config file</li>
+    <li>-generate <client|controller> -output <path/to/output> - Generates a default config file for the specified program</li>
+</ul>
 <br><br>
 **License:**<br>
 Copyright (c) 2015 portalBlock. This work is provided AS-IS without any warranty.
