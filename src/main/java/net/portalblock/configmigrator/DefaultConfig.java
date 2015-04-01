@@ -16,6 +16,7 @@ public class DefaultConfig {
         cfg.put("motd", "&3ProxyConn by portalBlock");
         cfg.put("maintMotd", "&4Undergoing some work, be back soon :D");
         cfg.put("prefix", "&7[&cProxyConn2.0&7]");
+        cfg.put("license", "CHANGE_ME");
 
         JSONArray staff = new JSONArray();
         staff.put("portalBlock");
