@@ -64,7 +64,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>${artifactId}$</finalName>
+                            <finalName>${artifactId}</finalName>
                             <artifactSet>
                                 <includes>
                                     <include>org.yaml:snakeyaml</include>

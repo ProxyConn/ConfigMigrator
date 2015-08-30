@@ -16,6 +16,7 @@ public class DefaultConfig {
         cfg.put("motd", "&3ProxyConn by portalBlock");
         cfg.put("maintMotd", "&4Undergoing some work, be back soon :D");
         cfg.put("prefix", "&7[&cProxyConn2.0&7]");
+        cfg.put("maxPlayers", 200);
         cfg.put("license", "CHANGE_ME");
 
         JSONArray staff = new JSONArray();
@@ -28,6 +29,7 @@ public class DefaultConfig {
         server.put("name", "Lobby");
         server.put("ip", "127.0.0.1:25566");
         server.put("isLobby", true);
+        server.put("display", true);
         servers.put(server);
         cfg.put("servers", servers);
 
